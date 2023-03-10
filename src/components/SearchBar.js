@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function SearchBar({ onSearching }) {
   const [inputTerm, setInputTerm] = useState("");
 
-  const handleFormSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     onSearching(inputTerm);
   };
@@ -16,7 +16,7 @@ export default function SearchBar({ onSearching }) {
 
   return (
     <SearchBarStyled>
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>Enter Search Term</label>
         <input value={inputTerm} onChange={handleChange} />
       </form>
